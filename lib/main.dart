@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  //시작영역
   runApp(MyApp());
 }
 
