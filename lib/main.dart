@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cupertino_page.dart';
 
 void main() {
   //시작영역
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HelloPage("두둥"),
+      // home: CupertinoPage(),
     );
   }
 }
@@ -79,6 +81,15 @@ class _HelloPageState extends State<HelloPage> {
               children: <Widget>[
                 Text(_message, style: TextStyle(fontSize: 30)),
                 Text('$_counter', style: TextStyle(fontSize: 30)),
+                RaisedButton(
+                    child: Text('화면이동'),
+                  onPressed: (){
+                      Navigator.push(//화면이동시킬땐 이거쓰고, 자동으로 백 버튼도 생긴다????신기하네.
+                          context,
+                          MaterialPageRoute(builder: (context) => CupertinoPage())
+                      );
+                  },
+                )
               ],
             )
         //Text(_message, style: TextStyle(fontSize: 30))
